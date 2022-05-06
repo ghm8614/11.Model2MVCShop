@@ -31,9 +31,10 @@ Product product = (Product)request.getAttribute("product");
 
 <!--  ///////////////////////// CSS ////////////////////////// -->
 <style>
-body {
-	padding-top: 50px;
-}
+	body {
+		padding-top: 50px;
+
+	}
 </style>
 
 <!--  ///////////////////////// JavaScript ////////////////////////// -->
@@ -87,7 +88,7 @@ body {
 		<div class="page-header">
 			<h3 class=" text-info">상품상세조회</h3>
 			<h5 class="text-muted">
-				<strong class="text-danger">상세조회</strong>페이지 입니당
+				<strong class="text-danger">상세조회</strong>페이지 입니다
 			</h5>
 		</div>
 
@@ -142,7 +143,7 @@ body {
 			<div class="col-xs-4 col-md-2 ">
 				<strong>가격</strong>
 			</div>
-			<div class="col-xs-8 col-md-4">${requestScope.product.price}</div>
+			<div class="col-xs-8 col-md-4">${requestScope.product.price}&nbsp;  원</div>
 		</div>
 
 		<hr />

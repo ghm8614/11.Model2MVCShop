@@ -36,7 +36,7 @@
 
 
 	<!-- SELECT -->
-	<select id="findProduct" parameterType="com.model2.mvc.service.domain.Product" resultMap="productSelectMap">
+	<select id="findProduct" parameterType="int" resultMap="productSelectMap">
 		SELECT * FROM product
 		WHERE prod_no = #{prodNo}
 	</select>

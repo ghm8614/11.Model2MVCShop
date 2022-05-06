@@ -87,12 +87,11 @@ body {
 							console.log("JSONData : \n" + JSONData);
 
 							var displayValue = "<h7>" + "<br/><br/>상품번호 : "
-									+ JSONData.prodNo + "<br/>" + "상품명 : "
+									+ JSONData.prodNo + "<br/>" + "상품명  : "
 									+ JSONData.prodName + "<br/>" + "상세정보 : "
 									+ JSONData.prodDetail + "<br/>" + "제조일자 : "
 									+ JSONData.manuDate + "<br/>" + "가  격 : "
-									+ JSONData.price + "<br/>" + "등록일자 : "
-									+ JSONData.regDate + "<br/>" + "</h7>";
+									+ JSONData.price + "</h7>";
 							
 							//Debug...									
 							console.log(displayValue);
@@ -105,22 +104,21 @@ body {
 				});
 
 		$(".ct_list_pop td.toGet").on("click", function() {
-					self.location = "/product/getProduct?menu=search&prodNo="+ $(this).data("아무변수");
+					self.location = "/product/getProduct?menu=search&prodNo="+ $(this).data("value01");
 				});
 
 		
 		$(".ct_list_pop td.toUpdate").on("click", function() {
-							self.location = "/product/updateProduct?menu=manage&prodNo="+ $(this).data("아무변수");
+							self.location = "/product/updateProduct?menu=manage&prodNo="+ $(this).data("value02");
 						});
 
 		
 		$(".ct_list_pop td.toUpdateTranCode").on("click",function() {
-							self.location = "/product/updateTranCodeByProd?tranCode=2&prodNo="
-									+ $(this).data("AA");
+							self.location = "/purchase/updateTranCodeByProd?tranCode=2&prodNo="+ $(this).data("value03");
 						});
 
-		//$( ".ct_list_pop td:nth-child(3)" ).css("color" , "red");
-		//$("h7").css("color" , "red");
+		$( ".ct_list_pop td:nth-child(2)" ).css("color" , "red");
+		$("h7").css("color" , "red");
 
 	});
 </script>
@@ -215,8 +213,7 @@ body {
 						<!--td></td-->
 
 						<c:if test="${! empty menu && menu eq 'search'}">
-							<td align="left" data-아무변수="${product.prodNo}" class="toGet">
-								<!-- a href="/product/getProduct?prodNo=${product.prodNo}&menu=search"></a> -->
+							<td align="left" data-value01="${product.prodNo}" class="toGet">
 								${product.prodName}
 							</td>
 							<!--td></td-->
@@ -236,8 +233,7 @@ body {
 						</c:if>
 
 						<c:if test="${! empty menu && menu eq 'manage'}">
-							<td align="left" data-아무변수="${product.prodNo}" class="toUpdate">
-								<!--<a href="/product/updateProduct?prodNo=${product.prodNo}&menu=manage"></a>-->
+							<td align="left" data-value02="${product.prodNo}" class="toUpdate">
 								${product.prodName}
 							</td>
 							<!--td></td-->
@@ -252,7 +248,7 @@ body {
 								</c:when>
 
 								<c:when test="${fn:startsWith(product.proTranCode,'1')}">
-									<td align="left" data-AA="${product.prodNo}"
+									<td align="left" data-value="${product.prodNo}"
 										class="toUpdateTranCode">구매완료 <!-- <a href="/product/updateTranCodeByProd?prodNo=${product.prodNo}&tranCode=2"></a>-->
 										배송하기
 									</td>

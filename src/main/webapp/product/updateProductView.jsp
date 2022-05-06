@@ -151,7 +151,7 @@ body {
 				<label for="price" class="col-sm-offset-1 col-sm-3 control-label">°¡°Ý</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="price" name="price"
-						value="${product.price}">&nbsp;¿ø
+						value="${product.price}">
 				</div>
 			</div>
 

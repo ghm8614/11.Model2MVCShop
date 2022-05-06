@@ -43,8 +43,6 @@
 	                         	<li><a href="#">회원정보조회</a></li>
 	                         </c:if>
 	                         
-	                         <li class="divider"></li>
-	                         <li><a href="#">etc...</a></li>
 	                     </ul>
 	                 </li>	
 	                 
@@ -58,8 +56,6 @@
 		                     <ul class="dropdown-menu">
 		                         <li><a href="#">판매상품등록</a></li>
 		                         <li><a href="#">판매상품관리</a></li>
-		                         <li class="divider"></li>
-		                         <li><a href="#">etc..</a></li>
 		                     </ul>
 		                </li>
 	                 </c:if>
@@ -76,14 +72,12 @@
 	                         <c:if test="${sessionScope.user.role == 'user'}">
 	                           <li><a href="#">구매이력조회</a></li>
 	                         </c:if>
-	                         
+	 
 	                         <li><a href="#">최근본상품</a></li>
-	                         <li class="divider"></li>
-	                         <li><a href="#">etc..</a></li>
 	                     </ul>
 	                 </li>
 	                 
-	                 <li><a href="#">etc...</a></li>
+
 	             </ul>
 	             
 	             <ul class="nav navbar-nav navbar-right">
@@ -141,6 +135,11 @@
 	 	$( "a:contains('상 품 검 색')" ).on("click" , function() {
 	 		//$(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct?menu=search");
 	 		$(self.location).attr("href","/product/listProduct?menu=search");
+		});
+	 	
+	 	$( "a:contains('구매이력조회')" ).on("click" , function() {
+	 		//$(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct?menu=search");
+	 		$(self.location).attr("href","/purchase/listPurchase");
 		});
 		
 	</script>  
